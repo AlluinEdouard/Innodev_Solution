@@ -1,1 +1,146 @@
-<p>home works!</p>
+<div class="home-container">
+  <div class="video-section">
+    <div class="video-overlay"></div>
+    <video #backgroundVideo autoplay muted loop class="background-video" (ended)="restartVideo()">
+      <source [src]="videoSource" type="video/mp4">
+      Votre navigateur ne supporte pas les vidéos HTML5.
+    </video>
+    
+    <div class="content-overlay">
+      <h1 class="main-title">AGENCE DE DÉVELOPPEMENT SUR MESURE</h1>
+      <div class="slogan-container">
+        <p class="slogan">NOTRE VISION, NOS SOLUTIONS</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="content-section">
+    <div class="key-elements-container">
+      <div class="key-elements-text">
+        <h2 class="section-title">Elements clés</h2>
+        <p class="key-elements-description">
+          Avec plus de <span class="highlight-text">10 ans d'expérience</span>, nous accompagnons nos clients dans leur transformation digitale en leur offrant des solutions sur mesure, conçues <span class="highlight-text">pour automatiser leurs processus, gagner du temps et optimiser leurs opérations.</span>
+        </p>
+      </div>
+
+      <div class="key-elements-features">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <img src="assets/experience.png" alt="Experience">
+          </div>
+          <p class="feature-text">+ 10 ans d'expériences</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <img src="assets/creation.png" alt="Creation">
+          </div>
+          <p class="feature-text">Création Innodev: 2023</p>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <img src="assets/collaborators.png" alt="Collaborators">
+          </div>
+          <p class="feature-text">Equipe de 4 collaborateurs expérimentés</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Section expertise avec structure corrigée -->
+  <div class="expertise-section">
+    <div class="expertise-container">
+      <!-- Section 1: UX/UI -->
+      <div class="expertise-item">
+        <div class="expertise-content">
+          <div class="expertise-icon">
+            <img src="assets/ux-ui-icon.png" alt="UX/UI">
+          </div>
+          <div class="expertise-title-container">
+            <h3 class="expertise-title">UX/UI</h3>
+          </div>
+          <div class="expertise-text">
+            <div class="expertise-description">
+              <p class="short-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod purus vel libero vehicula finibus. Suspendisse potenti. Fusce rhoncus neque ut metus scelerisque, ac efficitur dui tempor... <span class="see-more" (click)="toggleText('uxui')">Voir plus...</span></p>
+              <p class="full-text" [class.visible]="expandedSections['uxui']">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod purus vel libero vehicula finibus. Suspendisse potenti. Fusce rhoncus neque ut metus scelerisque, ac efficitur dui tempor. Cras consectetur tortor justo, auctor venenatis lectus euismod ut. Aenean bibendum magna quis magna rhoncus, eu sodales dolor imperdiet. Maecenas vel rutrum leo, vel tempor sem.</p>
+            </div>
+          </div>
+        </div>
+        <div class="separator"></div>
+      </div>
+      
+      <!-- Section 2: LANGUAGES (inversé) -->
+      <div class="expertise-item mirror">
+        <div class="expertise-content">
+          <div class="expertise-icon">
+            <img src="assets/languages-icon.png" alt="Languages">
+          </div>
+          <div class="expertise-title-container">
+            <h3 class="expertise-title">LANGUAGES</h3>
+          </div>
+          <div class="expertise-text">
+            <div class="expertise-description">
+              <p class="short-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut ligula et dui finibus finibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae... <span class="see-more" (click)="toggleText('languages')">Voir plus...</span></p>
+              <p class="full-text" [class.visible]="expandedSections['languages']">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut ligula et dui finibus finibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae. Morbi at rutrum nibh. Suspendisse quis magna vel magna ullamcorper dignissim. Nam ac mauris at tortor vestibulum lobortis at vel dui. Proin sit amet turpis volutpat, pretium leo a, auctor nisi.</p>
+            </div>
+          </div>
+        </div>
+        <div class="separator"></div>
+      </div>
+      
+      <!-- Section 3: LOGICIELS -->
+      <div class="expertise-item">
+        <div class="expertise-content">
+          <div class="expertise-icon">
+            <img src="assets/software-icon.png" alt="Logiciels">
+          </div>
+          <div class="expertise-title-container">
+            <h3 class="expertise-title">LOGICIELS</h3>
+          </div>
+          <div class="expertise-text">
+            <div class="expertise-description">
+              <p class="short-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dolor neque. Praesent sollicitudin pulvinar turpis, sit amet facilisis nisi ornare ut. Nullam eleifend... <span class="see-more" (click)="toggleText('logiciels')">Voir plus...</span></p>
+              <p class="full-text" [class.visible]="expandedSections['logiciels']">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed dolor neque. Praesent sollicitudin pulvinar turpis, sit amet facilisis nisi ornare ut. Nullam eleifend augue nibh, sit amet tincidunt mi efficitur in. Nulla facilisi. Nullam efficitur rutrum nibh, id tempus nisi laoreet eget. Vestibulum eu consequat velit, ac varius enim. Aliquam rhoncus metus vel fermentum suscipit.</p>
+            </div>
+          </div>
+        </div>
+        <div class="separator"></div>
+      </div>
+      
+      <!-- Section 4: COORDINATION & COMMUNICATION (inversé: titre + texte - image) -->
+      <div class="expertise-item mirror">
+        <div class="expertise-content">
+          <div class="expertise-icon">
+            <img src="assets/communication-icon.png" alt="Coordination & Communication">
+          </div>
+          <div class="expertise-title-container">
+            <h3 class="expertise-title">COORDINATION</h3>
+            <h3 class="expertise-title">& COMMUNICATION</h3>
+          </div>
+          <div class="expertise-text">
+            <div class="expertise-description">
+              <p class="short-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer feugiat, magna non cursus consequat, dui nibh ultricies neque, nec pretium ex ante id justo... <span class="see-more" (click)="toggleText('coordination')">Voir plus...</span></p>
+              <p class="full-text" [class.visible]="expandedSections['coordination']">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer feugiat, magna non cursus consequat, dui nibh ultricies neque, nec pretium ex ante id justo. Quisque varius, mi id accumsan vestibulum, enim nisi dictum lacus, sit amet viverra tortor nibh ac magna. Nullam at hendrerit ipsum. Cras suscipit iaculis dui, id eleifend nisi pellentesque quis. Ut eu metus non ligula molestie consequat.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Section call-to-action -->
+  <div class="cta-section">
+    <div class="cta-container">
+      <div class="cta-content">
+        <div class="cta-text">
+          <h2 class="cta-title">Vous souhaitez digitaliser votre entreprise ?</h2>
+          <p class="cta-subtitle">Alors vous êtes au bon endroit pour prendre un rendez-vous</p>
+        </div>
+        <div class="cta-button-container">
+          <button class="cta-button">Nous contacter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

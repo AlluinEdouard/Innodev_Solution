@@ -1,0 +1,86 @@
+@use "sass:color";
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap');
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5rem;
+  background-color: white;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: bold;
+  max-height: 120px;
+  margin: 0 auto;
+
+  .logo {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 1rem;
+    padding: 4rem;
+
+    img {
+      height: 150px;
+      width: 150px;
+      margin-right: 10px;
+    }
+  }
+
+  .nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 5rem;
+      justify-content: center;
+
+      li {
+        position: relative;
+
+        a {
+          text-decoration: none;
+          color: #486F8B;
+          font-size: 1rem;
+          transition: color 0.3s;
+
+          &:hover {
+            color: color.adjust(#486F8B, $lightness: -10%);
+          }
+        }
+
+        &.dropdown:hover .dropdown-menu {
+          display: block;
+        }
+
+        .dropdown-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: white;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+          list-style: none;
+          padding: 0.5rem 0;
+          min-width: 180px;
+          z-index: 100;
+
+          li {
+            padding: 0.5rem 1rem;
+
+            a {
+              color: #486F8B;
+              display: block;
+
+              &:hover {
+                background-color: #f0f0f0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

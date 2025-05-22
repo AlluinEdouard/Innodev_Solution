@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=PT+Sans&display=swap');
+
+.footer {
+  background-color: #ffffff;
+  padding: 2rem 3rem;
+  font-family: 'League Spartan', sans-serif;
+  
+  .footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 120px;
+    margin: 0 auto;
+    margin-top: 30px;
+    
+    @media (max-height: 768px) {
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+  }
+  
+  .footer-logo {
+    img {
+      width: 150px;
+      height: 150px;
+      padding: 4.5rem;
+    }
+  }
+  
+  .footer-contact {
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      .icon {
+        margin-right: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      // ⬇️ Ici, on applique PT Sans uniquement aux textes de contact
+      p {
+        margin: 0;
+        color: #4BA4CE;
+        font-family: 'PT Sans', sans-serif;
+      }
+    }
+  }
+  
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0rem 6.5rem;
+    
+    .legal-button {
+      background-color: #4BA4CE;
+      color: white;
+      padding: 1rem 2.2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-bottom: 4rem;
+      transition: background-color 0.3s;
+      
+      &:hover {
+        background-color: darken(#486F8B, 10%);
+      }
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      padding: 0rem -0.9rem;
+      
+      .social-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 97px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #4BA4CE;
+        transition: background-color 0.3s;
+        
+        &:hover {
+          background-color: darken(#486F8B, 10%);
+        }
+        
+        img {
+          width: 24px;
+          height: 24px;
+          filter: brightness(0) invert(1);
+        }
+      }
+    }
+  }
+}
