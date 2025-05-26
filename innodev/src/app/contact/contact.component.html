@@ -1,0 +1,89 @@
+<div class="contact-page">
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.10.1/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.10.1/sweetalert2.min.css">
+    
+    <div class="video-section">
+        <video #backgroundVideo autoplay muted loop playsinline class="background-video">
+            <source src="assets/contact-video.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas les vidéos HTML5.
+        </video>
+        <div class="video-overlay">
+            <h1 class="video-title">CONTACT</h1>
+        </div>
+    </div>
+
+    <div class="container" #contactContainer>
+        <div class="contact-content">
+            <h1>Un projet en tête ?</h1>
+            <h2>Alors Contactez-nous!</h2>
+
+            <form (ngSubmit)="onSubmit()" #contactFormRef="ngForm" #contactForm class="contact-form">
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input
+                        type="text"
+                        id="nom"
+                        name="nom"
+                        [(ngModel)]="formData.nom"
+                        required
+                        class="form-control"
+                        placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input
+                        type="text"
+                        id="prenom"
+                        name="prenom"
+                        [(ngModel)]="formData.prenom"
+                        required
+                        class="form-control"
+                        placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        [(ngModel)]="formData.email"
+                        required
+                        class="form-control"
+                        placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label for="numero">Numéro <span class="optional">(optionnel)</span></label>
+                    <input 
+                        type="tel" 
+                        id="numero" 
+                        name="numero"
+                        [(ngModel)]="formData.numero"
+                        class="form-control"
+                        placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label for="besoins">Vos besoins <span class="optional">(optionnel)</span></label>
+                    <textarea 
+                        id="besoins" 
+                        name="besoins"
+                        [(ngModel)]="formData.besoins"
+                        rows="5"
+                        class="form-control"
+                        placeholder=""></textarea>
+                </div>
+
+                <button 
+                    type="submit" 
+                    class="submit-btn"
+                    [disabled]="!contactFormRef.form.valid">
+                    Envoyer
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

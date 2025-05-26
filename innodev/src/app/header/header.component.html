@@ -3,13 +3,18 @@
     <img src="assets/logo.png" alt="Logo">
   </div>
 
-  <nav class="nav">
+  <!-- Burger menu -->
+  <button class="burger" (click)="toggleMenu()" aria-label="Toggle menu">
+    &#9776;
+  </button>
+
+  <nav class="nav" [class.active]="menuOpen">
     <ul class="nav-list">
       <li><a routerLink="/home" routerLinkActive="active">HOME</a></li>
       <li class="dropdown">
         <a href="#">SAVOIR-FAIRE</a>
         <ul class="dropdown-menu">
-          <li><a routerLink="/sur-mesure">DEVELOPPEMENT SUR MESURE</a></li>
+          <li><a routerLink="/dev-sur-mesure" routerLinkActive="active">DEVELOPPEMENT SUR MESURE</a></li>
           <li><a routerLink="/vitrine">SITE VITRINE</a></li>
           <li><a routerLink="/application">APPLICATION WEB</a></li>
         </ul>

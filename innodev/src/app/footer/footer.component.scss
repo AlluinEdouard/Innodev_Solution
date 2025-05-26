@@ -7,49 +7,48 @@
   
   .footer-container {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    max-height: 120px;
     margin: 0 auto;
     margin-top: 30px;
-    
-    @media (max-height: 768px) {
+    gap: 2rem;
+
+    @media (max-width: 768px) {
       flex-direction: column;
-      gap: 2.5rem;
+      text-align: center;
+      align-items: center;
     }
   }
+
   
   .footer-logo {
     img {
-      width: 150px;
-      height: 150px;
-      padding: 4.5rem;
+      width: 120px;
+      height: 120px;
+      padding: 2rem;
+
+      @media (max-width: 768px) {
+        padding: 1rem;
+      }
     }
   }
+
   
   .footer-contact {
     .contact-item {
       display: flex;
       align-items: center;
-      margin-bottom: 2rem;
-      
-      &:last-child {
-        margin-bottom: 0;
-      }
-      
-      .icon {
-        margin-right: 1rem;
-        display: flex;
-        align-items: center;
+      margin-bottom: 1.5rem;
+
+      @media (max-width: 768px) {
         justify-content: center;
-        
-        img {
-          width: 24px;
-          height: 24px;
-        }
       }
 
-      // ⬇️ Ici, on applique PT Sans uniquement aux textes de contact
+      .icon {
+        margin-right: 1rem;
+      }
+
       p {
         margin: 0;
         color: #4BA4CE;
@@ -57,13 +56,18 @@
       }
     }
   }
+
   
   .footer-links {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding: 0rem 6.5rem;
-    
+    padding: 0 2rem;
+
+    @media (max-width: 768px) {
+      align-items: center;
+    }
+
     .legal-button {
       background-color: #4BA4CE;
       color: white;
@@ -82,13 +86,13 @@
     .social-links {
       display: flex;
       gap: 1rem;
-      padding: 0rem -0.9rem;
+      padding: 0;
       
       .social-icon {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-left: 97px;
+        margin-left: 0;
         width: 40px;
         height: 40px;
         border-radius: 50%;
