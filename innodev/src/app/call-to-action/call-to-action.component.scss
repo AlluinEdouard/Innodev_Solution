@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=PT+Sans&display=swap');
+
+/* Section Call-to-Action */
+.cta-section {
+  padding: 3rem 0;
+  width: 100%;
+  background-color: #25384A;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  
+  @media (min-width: 768px) {
+    padding: 4rem 0;
+  }
+  
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.cta-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  
+  @media (min-width: 768px) {
+    padding: 0 2rem;
+  }
+}
+
+.cta-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  
+  @media (max-width: 767px) {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  @media (min-width: 768px) {
+    gap: 3rem;
+  }
+}
+
+.cta-text {
+  flex: 1;
+}
+
+.cta-title {
+  color: white;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  
+  @media (min-width: 576px) {
+    font-size: 1.8rem;
+  }
+  
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 2.2rem;
+  }
+}
+
+.cta-subtitle {
+  color: white;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  
+  @media (min-width: 768px) {
+    font-size: 1.1rem;
+  }
+}
+
+.cta-button-container {
+  flex-shrink: 0;
+}
+
+.cta-button {
+  background-color: #4BA4CE;
+  color: white;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid #4BA4CE;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  
+  @media (min-width: 576px) {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+  }
+  
+  &:hover {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}

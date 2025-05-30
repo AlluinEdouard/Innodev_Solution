@@ -1,0 +1,153 @@
+<div class="site-vitrine-container">
+  <!-- Section vidéo avec titre -->
+  <div class="video-section">
+    <div class="video-overlay"></div>
+    <video #backgroundVideo autoplay muted loop class="background-video" (ended)="restartVideo()">
+      <source src="assets/background-video-dev.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas les vidéos HTML5.
+    </video>
+    
+    <div class="title-overlay">
+      <h1 class="main-title">SITE VITRINE</h1>
+    </div>
+  </div>
+
+  <!-- Section contenu principal -->
+  <div class="content-section">
+    <div class="content-container">
+      
+      <!-- Section 1 -->
+      <div class="section-item">
+        <div class="icon-container">
+          <img src="assets/history.png" alt="Design">
+        </div>
+        <h2 class="section-title">HISTOIRE</h2>
+        <p class="section-text">
+          Forts de 10 ans d'expérience dans la digitalisation d'une PME de 250 salariés, nous avons fondé notre agence en 2023 pour mettre notre expertise au service d'entreprises en quête de transformation digitale. Notre approche repose sur une compréhension approfondie des besoins de chaque client et la création de solutions sur mesure, conçues pour répondre aux défis spécifiques de leur secteur. Aujourd'hui, avec une équipe dédiée de quatre développeurs, nous accompagnons nos clients vers des processus optimisés et une efficacité accrue.
+        </p>
+        
+        <!-- Carrousel d'images 1 -->
+        <div class="carousel-container">
+          <button class="carousel-arrow left" (click)="previousImage(0)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18L9 12L15 6" stroke="#4BA4CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          
+          <div class="images-wrapper">
+            <div class="image-item" 
+                 *ngFor="let image of carousels[0].images; let i = index"
+                 [class]="getImageClass(0, i)">
+              <img [src]="image.src" [alt]="image.alt">
+            </div>
+          </div>
+          
+          <button class="carousel-arrow right" (click)="nextImage(0)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M9 18L15 12L9 6" stroke="#4BA4CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Indicateurs de pagination -->
+        <div class="carousel-indicators">
+          <button 
+            *ngFor="let image of carousels[0].images; let i = index"
+            class="indicator"
+            [class.active]="i === carousels[0].currentIndex"
+            (click)="goToImage(0, i)">
+          </button>
+        </div>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="section-item">
+        <div class="icon-container">
+          <img src="assets/view.png" alt="Responsive">
+        </div>
+        <h2 class="section-title">VISION</h2>
+        <p class="section-text">
+          Chez Innodev, nous croyons que chaque entreprise mérite des solutions digitales qui répondent précisément à ses enjeux et ambitions. Notre vision est d'accompagner nos clients dans une transformation digitale véritablement impactante, en créant des outils qui automatisent leurs processus, libèrent du temps pour l'essentiel et soutiennent une croissance durable. Nous allions innovation et pragmatisme pour développer des applications et plateformes évolutives, adaptées aux besoins réels de chaque organisation. Ensemble, nous transformons les défis numériques en opportunités concrètes.
+        </p>
+        
+        <!-- Carrousel d'images 2 -->
+        <div class="carousel-container">
+          <button class="carousel-arrow left" (click)="previousImage(1)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18L9 12L15 6" stroke="#4BA4CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          
+          <div class="images-wrapper">
+            <div class="image-item" 
+                 *ngFor="let image of carousels[1].images; let i = index"
+                 [class]="getImageClass(1, i)">
+              <img [src]="image.src" [alt]="image.alt">
+            </div>
+          </div>
+          
+          <button class="carousel-arrow right" (click)="nextImage(1)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M9 18L15 12L9 6" stroke="#4BA4CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Indicateurs de pagination -->
+        <div class="carousel-indicators">
+          <button 
+            *ngFor="let image of carousels[1].images; let i = index"
+            class="indicator"
+            [class.active]="i === carousels[1].currentIndex"
+            (click)="goToImage(1, i)">
+          </button>
+        </div>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="section-item">
+        <div class="icon-container">
+          <img src="assets/laptop.png" alt="Performance">
+        </div>
+        <h2 class="section-title">TECHNOLOGIE</h2>
+        <p class="section-text">
+          Nous utilisons des technologies récentes et fiables, basées sur des frameworks modernes, pour garantir à nos clients des solutions performantes et durables. Ces outils nous permettent de concevoir des applications robustes, évolutives et parfaitement adaptées aux besoins spécifiques de chaque projet. En restant à la pointe des avancées technologiques, nous assurons des performances optimales et une sécurité renforcée pour accompagner la croissance de nos clients en toute confiance.       
+        </p>
+        
+        <!-- Carrousel d'images 3 -->
+        <div class="carousel-container">
+          <button class="carousel-arrow left" (click)="previousImage(2)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18L9 12L15 6" stroke="#4BA4CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          
+          <div class="images-wrapper">
+            <div class="image-item" 
+                 *ngFor="let image of carousels[2].images; let i = index"
+                 [class]="getImageClass(2, i)">
+              <img [src]="image.src" [alt]="image.alt">
+            </div>
+          </div>
+          
+          <button class="carousel-arrow right" (click)="nextImage(2)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M9 18L15 12L9 6" stroke="#4BA4CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Indicateurs de pagination -->
+        <div class="carousel-indicators">
+          <button 
+            *ngFor="let image of carousels[2].images; let i = index"
+            class="indicator"
+            [class.active]="i === carousels[2].currentIndex"
+            (click)="goToImage(2, i)">
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

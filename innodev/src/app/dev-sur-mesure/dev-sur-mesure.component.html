@@ -1,1 +1,113 @@
-<p>dev-sur-mesure works!</p>
+<div class="dev-sur-mesure-container">
+  <!-- Section vidéo avec titre -->
+  <div class="video-section">
+    <div class="video-overlay"></div>
+    <video #backgroundVideo autoplay muted loop class="background-video" (ended)="restartVideo()">
+      <source src="assets/background-video-dev.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas les vidéos HTML5.
+    </video>
+    
+    <div class="title-overlay">
+      <h1 class="main-title">DÉVELOPPEMENT SUR MESURE</h1>
+    </div>
+  </div>
+
+  <!-- Section contenu principal -->
+  <div class="content-section">
+    <div class="content-container">
+      
+      <!-- Élément de contenu 1 - Gauche -->
+      <div class="content-item left">
+        <div class="icon-container">
+          <img src="assets/logiciel_sur_mesure.png" alt="Développement">
+        </div>
+        <h2 class="content-title">LOGICIEL SUR MESURE</h2>
+        <div class="text-container">
+          <p class="content-text">
+            Nous concevons des logiciels sur mesure pour répondre précisément à vos besoins, simplifier vos processus et optimiser votre productivité. Nos solutions digitales sont pensées pour soutenir votre croissance et s’adapter à vos objectifs uniques.
+          </p>
+        </div>
+      </div>
+
+      <!-- Flèche 1 - De gauche vers droite -->
+      <div class="arrow-container arrow-right">
+        <svg class="arrow" width="80" height="40" viewBox="0 0 80 40">
+          <path d="M5 20 L65 20 M50 5 L65 20 L50 35" stroke="#4BA4CE" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <!-- Élément de contenu 2 - Droite -->
+      <div class="content-item right">
+        <div class="icon-container">
+          <img src="assets/site_internet.png" alt="Innovation">
+        </div>
+        <h2 class="content-title">SITE INTERNET</h2>
+        <div class="text-container">
+          <p class="content-text">
+            Nous créons des sites internet sur mesure, pensés pour refléter votre identité et atteindre vos objectifs. Grâce à notre expertise, nous développons des plateformes performantes et optimisées pour offrir une expérience utilisateur fluide et favoriser votre croissance en ligne.
+          </p>
+        </div>
+      </div>
+
+      <!-- Flèche 2 - De droite vers gauche -->
+      <div class="arrow-container arrow-left">
+        <svg class="arrow" width="80" height="40" viewBox="0 0 80 40">
+          <path d="M75 20 L15 20 M30 5 L15 20 L30 35" stroke="#4BA4CE" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <!-- Élément de contenu 3 - Gauche -->
+      <div class="content-item left">
+        <div class="icon-container">
+          <img src="assets/application.png" alt="Support">
+        </div>
+        <h2 class="content-title">APPLICATION</h2>
+        <div class="text-container">
+          <p class="content-text">
+            Nous concevons des applications mobiles sur mesure, adaptées à vos besoins et aux attentes de vos utilisateurs. Avec notre expertise, nous développons des solutions intuitives et performantes pour renforcer votre présence mobile et optimiser l’engagement de vos clients.
+          </p>
+        </div>
+      </div>
+
+      <!-- Flèche 3 - De gauche vers droite -->
+      <div class="arrow-container arrow-right">
+        <svg class="arrow" width="80" height="40" viewBox="0 0 80 40">
+          <path d="M5 20 L65 20 M50 5 L65 20 L50 35" stroke="#4BA4CE" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <!-- Élément de contenu 4 - Droite -->
+      <div class="content-item right">
+        <div class="icon-container">
+          <img src="assets/automatisation.png" alt="Sécurité">
+        </div>
+        <h2 class="content-title">AUTOMATISATION</h2>
+        <div class="text-container">
+          <p class="content-text">
+            Nous vous aidons à automatiser vos processus pour gagner en efficacité et réduire les tâches répétitives. Grâce à des solutions sur mesure, nous optimisons vos workflows pour vous permettre de vous concentrer sur l'essentiel et d'accroître votre productivité.
+          </p>
+        </div>
+      </div>
+
+      <!-- Flèche 4 - De droite vers gauche -->
+      <div class="arrow-container arrow-left">
+        <svg class="arrow" width="80" height="40" viewBox="0 0 80 40">
+          <path d="M75 20 L15 20 M30 5 L15 20 L30 35" stroke="#4BA4CE" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <!-- Élément de contenu 5 - Gauche -->
+      <div class="content-item left">
+        <div class="icon-container">
+          <img src="assets/conseille.png" alt="Analytics">
+        </div>
+        <h2 class="content-title">CONSEILLE</h2>
+        <div class="text-container">
+          <p class="content-text">
+            Nous vous accompagnons avec un service de conseil dédié, pour identifier et mettre en œuvre les solutions digitales les mieux adaptées à vos défis. Notre expertise vous guide à chaque étape, de la stratégie à l'optimisation, pour garantir des résultats concrets et durables.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

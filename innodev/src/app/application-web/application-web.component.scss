@@ -1,0 +1,548 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=PT+Sans&display=swap');
+
+.application-web-container {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Section vidéo avec titre */
+.video-section {
+  position: relative;
+  height: 25vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #25384A;
+  
+  @media (max-width: 768px) {
+    height: 20vh;
+  }
+  
+  @media (max-width: 576px) {
+    height: 18vh;
+  }
+}
+
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #25384A;
+  opacity: 0.8;
+  z-index: 2;
+}
+
+.title-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  text-align: center;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.main-title {
+  color: white;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1.5px;
+  line-height: 1.2;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  
+  @media (min-width: 576px) {
+    font-size: 2.2rem;
+  }
+  
+  @media (min-width: 768px) {
+    font-size: 2.5rem;
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 2.8rem;
+  }
+  
+  @media (min-width: 1200px) {
+    font-size: 3.2rem;
+  }
+}
+
+/* Section contenu principal */
+.content-section {
+  padding: 3rem 0;
+  width: 100%;
+  background-color: white;
+  
+  @media (min-width: 768px) {
+    padding: 4rem 0;
+  }
+  
+  @media (min-width: 1024px) {
+    padding: 5rem 0;
+  }
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+  box-sizing: border-box;
+  
+  @media (max-width: 576px) {
+    padding: 0 0.75rem;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    padding: 0 2rem;
+    gap: 4rem;
+  }
+  
+  @media (min-width: 1024px) {
+    gap: 5rem;
+    padding: 0 3rem;
+  }
+}
+
+/* Labels de contenu */
+.content-label {
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  box-sizing: border-box;
+  
+  @media (max-width: 576px) {
+    padding: 1.25rem;
+    border-radius: 12px;
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 320px) {
+    padding: 0.875rem;
+    border-radius: 8px;
+  }
+  
+  @media (min-width: 768px) {
+    padding: 3rem;
+  }
+  
+  @media (min-width: 1024px) {
+    padding: 3.5rem;
+  }
+}
+
+/* Label blanc avec ombre */
+.white-label {
+  background-color: white;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.white-text {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #4BA4CE;
+  margin: 0;
+  text-align: center;
+  
+  @media (max-width: 576px) {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  @media (min-width: 768px) {
+    font-size: 1.2rem;
+    line-height: 1.7;
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 1.3rem;
+  }
+}
+
+/* Label bleu */
+.blue-label {
+  background-color: #4BA4CE;
+  text-align: center;
+}
+
+.blue-title {
+  color: white;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  letter-spacing: 1px;
+  
+  @media (max-width: 576px) {
+    font-size: 1.5rem;
+  }
+  
+  @media (min-width: 576px) {
+    font-size: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    font-size: 2.2rem;
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 2.5rem;
+  }
+}
+
+.title-underline {
+  width: 80px;
+  height: 3px;
+  background-color: white;
+  margin: 0 auto 2rem auto;
+  border-radius: 2px;
+  
+  @media (max-width: 576px) {
+    width: 60px;
+    height: 2px;
+    margin-bottom: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    width: 100px;
+    height: 4px;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.icon-container {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem auto;
+  
+  @media (max-width: 576px) {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 2.5rem;
+  }
+  
+  @media (min-width: 1024px) {
+    width: 80px;
+    height: 80px;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0) invert(1); // Pour rendre l'icône blanche
+  }
+}
+
+.technical-content {
+  text-align: left;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  
+  @media (max-width: 576px) {
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+.technical-text {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: white;
+  margin: 0 0 1.5rem 0;
+  
+  @media (max-width: 576px) {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 1.2rem;
+  }
+}
+
+.technical-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  li {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: white;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    
+    @media (max-width: 576px) {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+      padding-left: 1.2rem;
+    }
+    
+    @media (min-width: 768px) {
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+    }
+    
+    @media (min-width: 1024px) {
+      font-size: 1.1rem;
+    }
+    
+    &:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      
+      @media (max-width: 576px) {
+        font-size: 1rem;
+      }
+    }
+    
+    strong {
+      font-weight: 700;
+    }
+  }
+}
+
+/* Contenu des avantages - Alignement à gauche */
+.advantages-content {
+  text-align: left; // Changé de center à left
+  color: #4BA4CE;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.advantages-intro {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  
+  @media (max-width: 576px) {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 1.4rem;
+  }
+}
+
+.advantages-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  
+  @media (max-width: 576px) {
+    margin-bottom: 1.5rem;
+  }
+  
+  li {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
+    
+    @media (max-width: 576px) {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 0.6rem;
+    }
+    
+    @media (min-width: 768px) {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    
+    @media (min-width: 1024px) {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.advantages-conclusion {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0;
+  font-weight: 500;
+  
+  @media (max-width: 576px) {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  @media (min-width: 768px) {
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 1.3rem;
+  }
+}
+
+/* Bouton Call-to-Action */
+.cta-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  
+  @media (max-width: 576px) {
+    margin-top: 1.5rem;
+  }
+}
+
+.cta-button {
+  background-color: #4BA4CE;
+  color: white;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(75, 164, 206, 0.3);
+  
+  @media (max-width: 576px) {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+    letter-spacing: 0.3px;
+  }
+  
+  @media (min-width: 768px) {
+    font-size: 1.2rem;
+    padding: 1.2rem 3rem;
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 1.3rem;
+    padding: 1.3rem 3.5rem;
+  }
+  
+  &:hover {
+    background-color: #3a8eb3;
+    box-shadow: 0 6px 20px rgba(75, 164, 206, 0.4);
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(75, 164, 206, 0.3);
+  }
+}
+
+/* Styles pour très petits écrans */
+@media (max-width: 320px) {
+  .application-web-container {
+    padding: 0;
+  }
+  
+  .content-container {
+    padding: 0 0.5rem;
+  }
+  
+  .main-title {
+    font-size: 1.3rem;
+    padding: 0.8rem;
+    letter-spacing: 1px;
+  }
+  
+  .content-label {
+    padding: 0.875rem;
+    margin: 0;
+  }
+  
+  .blue-title {
+    font-size: 1.3rem;
+  }
+  
+  .white-text,
+  .technical-text,
+  .advantages-intro,
+  .advantages-conclusion {
+    font-size: 0.85rem;
+  }
+  
+  .technical-list li,
+  .advantages-list li {
+    font-size: 0.85rem;
+  }
+  
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.8rem;
+  }
+}

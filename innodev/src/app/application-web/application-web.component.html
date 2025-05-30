@@ -1,0 +1,77 @@
+<div class="application-web-container">
+  <!-- Section vidéo avec titre -->
+  <div class="video-section">
+    <div class="video-overlay"></div>
+    <video #backgroundVideo autoplay muted loop class="background-video" (ended)="restartVideo()">
+      <source src="assets/background-video-dev.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas les vidéos HTML5.
+    </video>
+    
+    <div class="title-overlay">
+      <h1 class="main-title">APPLICATION WEB</h1>
+    </div>
+  </div>
+
+  <!-- Section contenu principal -->
+  <div class="content-section">
+    <div class="content-container">
+      
+      <!-- Premier label blanc avec texte latin -->
+      <div class="content-label white-label">
+        <p class="white-text">
+          L’entreprise démontre une capacité claire et éprouvée à concevoir et réaliser des applications web, grâce à plusieurs facteurs complémentaires 
+        </p>
+      </div>
+
+      <!-- Deuxième label bleu avec informations techniques -->
+      <div class="content-label blue-label">
+        <h2 class="blue-title">COMPÉTENCES TECHNIQUES</h2>
+        <div class="title-underline"></div>
+        
+        <div class="icon-container">
+          <img src="assets/laptop.png" alt="Compétences techniques">
+        </div>
+        
+        <div class="technical-content">
+          <p class="technical-text">
+            L'équipe de développement possède des compétences solides et diversifiées dans les technologies web:
+          </p>
+          
+          <ul class="technical-list">
+            <li><strong>Front-end :</strong> maîtrise de HTML5, CSS3, JavaScript, ainsi que la framework moderne Angular.</li>
+            <li><strong>Back-end :</strong> expertise sur un langages et framework tel Node.js.</li>
+            <li><strong>Base de données :</strong> maîtrise des systèmes de gestion de bases de données (MySQL), ainsi que de l'optimisation et la sécurisation des données.</li>
+            <li><strong>API et intégration :</strong> capacité à concevoir des architectures orientées services (REST, GraphQL) et à interagir avec des services tiers (paiements, réseaux sociaux, cloud).</li>
+            <li><strong>Logiciels:</strong> maîtrise des logiciels tels que Postman pour la gestion des routes et Tableplus pour la gestion de la base de données.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Troisième label blanc avec avantages -->
+      <div class="content-label white-label">
+        <div class="advantages-content">
+          <p class="advantages-intro">Grâce à :</p>
+          
+          <ul class="advantages-list">
+            <li>✅ son expertise technique complète,</li>
+            <li>✅ ses réalisations concrètes et références,</li>
+            <li>✅ ses processus de gestion et outils performants,</li>
+            <li>✅ et sa culture d'innovation,</li>
+          </ul>
+          
+          <p class="advantages-conclusion">
+            l'entreprise a toutes les compétences requises pour concevoir, développer et maintenir des applications web performantes, modernes, et adaptées aux besoins des clients.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bouton Call-to-Action -->
+      <div class="cta-container">
+        <button class="cta-button" (click)="onVoirRealisations()">
+          Voir les réalisations
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
