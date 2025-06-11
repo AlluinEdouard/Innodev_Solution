@@ -1,0 +1,28 @@
+<div class="team-container">
+  <div class="team-header">
+    <h1 class="team-title">UNE ÉQUIPE SOUDÉE !</h1>
+  </div>
+
+  <div class="team-explain">
+    <p class="team-description">
+      Une équipe soudée et complémentaire, réunissant des talents variés et des expertises
+      diversifiées. Cette synergie nous permet de répondre de manière optimale et innovante
+      aux besoins spécifiques de nos clients, tout en garantissant des solutions sur-mesure et
+      un accompagnement personnalisé.
+    </p>
+  </div>
+  
+  <div class="team-content">
+    <div class="team-members">
+      <div class="member" *ngFor="let member of teamMembers; let i = index">
+        <div class="member-photo">
+          <img [src]="member.photo" [alt]="member.name">
+        </div>
+        <div class="member-name">{{ member.name }}</div>
+        <div class="member-role">{{ member.role }}</div>
+        
+        <div class="separator" *ngIf="i < teamMembers.length - 1"></div>
+      </div>
+    </div>
+  </div>
+</div>

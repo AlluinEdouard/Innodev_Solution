@@ -6,6 +6,9 @@ import { DevSurMesureComponent } from './dev-sur-mesure/dev-sur-mesure.component
 import { CallToActionComponent } from './call-to-action/call-to-action.component';
 import { SiteVitrineComponent } from './site-vitrine/site-vitrine.component';
 import { ApplicationWebComponent } from './application-web/application-web.component';
+import { AutomatisationsComponent } from './automatisations/automatisations.component';
+import { ConseilComponent } from './conseil/conseil.component';
+import { TeamComponent } from './team/team.component';
 import { RealisationsComponent } from './realisations/realisations.component';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
@@ -22,7 +25,10 @@ import { RouterOutlet } from '@angular/router';
     CallToActionComponent,
     SiteVitrineComponent,
     ApplicationWebComponent,
-    RealisationsComponent
+    TeamComponent,
+    RealisationsComponent,
+    AutomatisationsComponent,
+    ConseilComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

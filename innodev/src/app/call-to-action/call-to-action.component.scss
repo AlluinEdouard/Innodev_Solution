@@ -12,13 +12,12 @@
   -webkit-transform: translateZ(0);
   transition: transform 0.3s ease;
   cursor: pointer;
+  /* S'assurer que le composant est visible par défaut */
+  opacity: 1;
+  visibility: visible;
   
   @media (min-width: 768px) {
     padding: 4rem 0;
-  }
-  
-  &:hover {
-    transform: scale(1.02);
   }
 }
 

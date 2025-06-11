@@ -6,6 +6,9 @@ import { DevSurMesureComponent } from './dev-sur-mesure/dev-sur-mesure.component
 import { SiteVitrineComponent } from './site-vitrine/site-vitrine.component';
 import { ApplicationWebComponent } from './application-web/application-web.component';
 import { RealisationsComponent } from './realisations/realisations.component';
+import { TeamComponent } from './team/team.component';
+import { AutomatisationsComponent } from './automatisations/automatisations.component';
+import { ConseilComponent } from './conseil/conseil.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,7 +17,10 @@ export const routes: Routes = [
     { path: 'dev-sur-mesure', component: DevSurMesureComponent },
     { path: 'site-vitrine', component: SiteVitrineComponent },
     { path: 'application-web', component: ApplicationWebComponent },
-    { path: 'realisations', component: RealisationsComponent }
+    { path: 'team', component: TeamComponent },
+    { path: 'realisations', component: RealisationsComponent },
+    { path: 'automatisation', component: AutomatisationsComponent},
+    { path: 'conseils', component: ConseilComponent}
 ];
 
 @NgModule({

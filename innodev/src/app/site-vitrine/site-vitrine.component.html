@@ -16,138 +16,130 @@
   <div class="content-section">
     <div class="content-container">
       
-      <!-- Section 1 -->
-      <div class="section-item">
-        <div class="icon-container">
-          <img src="assets/history.png" alt="Design">
-        </div>
-        <h2 class="section-title">HISTOIRE</h2>
-        <p class="section-text">
-          Forts de 10 ans d'expérience dans la digitalisation d'une PME de 250 salariés, nous avons fondé notre agence en 2023 pour mettre notre expertise au service d'entreprises en quête de transformation digitale. Notre approche repose sur une compréhension approfondie des besoins de chaque client et la création de solutions sur mesure, conçues pour répondre aux défis spécifiques de leur secteur. Aujourd'hui, avec une équipe dédiée de quatre développeurs, nous accompagnons nos clients vers des processus optimisés et une efficacité accrue.
+      <!-- Introduction -->
+      <div class="intro-section">
+        <h2 class="main-subtitle">Sites Internet Sur Mesure</h2>
+        <p class="intro-text">
+          Nous créons des sites internet sur mesure, pensés pour refléter votre identité et atteindre vos objectifs. 
+          Grâce à notre expertise, nous développons des plateformes performantes et optimisées pour offrir une 
+          expérience utilisateur fluide et favoriser votre croissance en ligne.
         </p>
-        
-        <!-- Carrousel d'images 1 -->
-        <div class="carousel-container">
-          <button class="carousel-arrow left" (click)="previousImage(0)">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M15 18L9 12L15 6" stroke="#4BA4CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          
-          <div class="images-wrapper">
-            <div class="image-item" 
-                 *ngFor="let image of carousels[0].images; let i = index"
-                 [class]="getImageClass(0, i)">
-              <img [src]="image.src" [alt]="image.alt">
-            </div>
-          </div>
-          
-          <button class="carousel-arrow right" (click)="nextImage(0)">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M9 18L15 12L9 6" stroke="#4BA4CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
-        
-        <!-- Indicateurs de pagination -->
-        <div class="carousel-indicators">
-          <button 
-            *ngFor="let image of carousels[0].images; let i = index"
-            class="indicator"
-            [class.active]="i === carousels[0].currentIndex"
-            (click)="goToImage(0, i)">
-          </button>
-        </div>
       </div>
 
-      <!-- Section 2 -->
-      <div class="section-item">
-        <div class="icon-container">
-          <img src="assets/view.png" alt="Responsive">
-        </div>
-        <h2 class="section-title">VISION</h2>
-        <p class="section-text">
-          Chez Innodev, nous croyons que chaque entreprise mérite des solutions digitales qui répondent précisément à ses enjeux et ambitions. Notre vision est d'accompagner nos clients dans une transformation digitale véritablement impactante, en créant des outils qui automatisent leurs processus, libèrent du temps pour l'essentiel et soutiennent une croissance durable. Nous allions innovation et pragmatisme pour développer des applications et plateformes évolutives, adaptées aux besoins réels de chaque organisation. Ensemble, nous transformons les défis numériques en opportunités concrètes.
-        </p>
+      <!-- Services Grid -->
+      <div class="services-grid">
         
-        <!-- Carrousel d'images 2 -->
-        <div class="carousel-container">
-          <button class="carousel-arrow left" (click)="previousImage(1)">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M15 18L9 12L15 6" stroke="#4BA4CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          
-          <div class="images-wrapper">
-            <div class="image-item" 
-                 *ngFor="let image of carousels[1].images; let i = index"
-                 [class]="getImageClass(1, i)">
-              <img [src]="image.src" [alt]="image.alt">
+        <!-- Service 1: Identité Visuelle -->
+        <div class="service-card">
+          <div class="service-icon">
+            <img src="assets/ux-ui-icon.png" alt="Identité Visuelle">
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Identité Visuelle</h3>
+            <p class="service-description">
+              Nous concevons des designs uniques qui reflètent parfaitement votre marque et vos valeurs. 
+              Chaque élément visuel est pensé pour créer une identité forte et mémorable qui vous distingue 
+              de la concurrence.
+            </p>
+            <div class="service-features">
+              <span class="feature-tag">Design personnalisé</span>
+              <span class="feature-tag">Charte graphique</span>
+              <span class="feature-tag">Cohérence visuelle</span>
             </div>
           </div>
-          
-          <button class="carousel-arrow right" (click)="nextImage(1)">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M9 18L15 12L9 6" stroke="#4BA4CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
         </div>
-        
-        <!-- Indicateurs de pagination -->
-        <div class="carousel-indicators">
-          <button 
-            *ngFor="let image of carousels[1].images; let i = index"
-            class="indicator"
-            [class.active]="i === carousels[1].currentIndex"
-            (click)="goToImage(1, i)">
-          </button>
-        </div>
-      </div>
 
-      <!-- Section 3 -->
-      <div class="section-item">
-        <div class="icon-container">
-          <img src="assets/laptop.png" alt="Performance">
-        </div>
-        <h2 class="section-title">TECHNOLOGIE</h2>
-        <p class="section-text">
-          Nous utilisons des technologies récentes et fiables, basées sur des frameworks modernes, pour garantir à nos clients des solutions performantes et durables. Ces outils nous permettent de concevoir des applications robustes, évolutives et parfaitement adaptées aux besoins spécifiques de chaque projet. En restant à la pointe des avancées technologiques, nous assurons des performances optimales et une sécurité renforcée pour accompagner la croissance de nos clients en toute confiance.       
-        </p>
-        
-        <!-- Carrousel d'images 3 -->
-        <div class="carousel-container">
-          <button class="carousel-arrow left" (click)="previousImage(2)">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M15 18L9 12L15 6" stroke="#4BA4CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          
-          <div class="images-wrapper">
-            <div class="image-item" 
-                 *ngFor="let image of carousels[2].images; let i = index"
-                 [class]="getImageClass(2, i)">
-              <img [src]="image.src" [alt]="image.alt">
+        <!-- Service 2: Performance -->
+        <div class="service-card">
+          <div class="service-icon">
+            <img src="assets/languages-icon.png" alt="Performance">
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Performance Optimale</h3>
+            <p class="service-description">
+              Nos sites sont développés avec les dernières technologies pour garantir des temps de chargement 
+              rapides, une navigation fluide et une compatibilité parfaite sur tous les appareils et navigateurs.
+            </p>
+            <div class="service-features">
+              <span class="feature-tag">Vitesse optimisée</span>
+              <span class="feature-tag">Responsive design</span>
+              <span class="feature-tag">SEO intégré</span>
             </div>
           </div>
-          
-          <button class="carousel-arrow right" (click)="nextImage(2)">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M9 18L15 12L9 6" stroke="#4BA4CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
         </div>
-        
-        <!-- Indicateurs de pagination -->
-        <div class="carousel-indicators">
-          <button 
-            *ngFor="let image of carousels[2].images; let i = index"
-            class="indicator"
-            [class.active]="i === carousels[2].currentIndex"
-            (click)="goToImage(2, i)">
-          </button>
+
+        <!-- Service 3: Expérience Utilisateur -->
+        <div class="service-card">
+          <div class="service-icon">
+            <img src="assets/communication-icon.png" alt="UX/UI">
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Expérience Utilisateur</h3>
+            <p class="service-description">
+              Nous plaçons l'utilisateur au cœur de notre démarche en créant des interfaces intuitives et 
+              engageantes. Chaque interaction est soigneusement pensée pour maximiser la conversion et 
+              la satisfaction de vos visiteurs.
+            </p>
+            <div class="service-features">
+              <span class="feature-tag">UX/UI design</span>
+              <span class="feature-tag">Navigation intuitive</span>
+              <span class="feature-tag">Conversion optimisée</span>
+            </div>
+          </div>
         </div>
+
+        <!-- Service 4: Croissance en Ligne -->
+        <div class="service-card">
+          <div class="service-icon">
+            <img src="assets/software-icon.png" alt="Croissance">
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Croissance en Ligne</h3>
+            <p class="service-description">
+              Nos solutions sont conçues pour accompagner votre développement. Intégration d'outils d'analyse, 
+              optimisation pour les moteurs de recherche et fonctionnalités évolutives pour soutenir votre 
+              croissance sur le long terme.
+            </p>
+            <div class="service-features">
+              <span class="feature-tag">Analytics intégrés</span>
+              <span class="feature-tag">Évolutivité</span>
+              <span class="feature-tag">Suivi personnalisé</span>
+            </div>
+          </div>
+        </div>
+
       </div>
 
+      <!-- Technologies Section -->
+      <div class="technologies-section">
+        <h3 class="technologies-title">Technologies Utilisées</h3>
+        <div class="tech-grid">
+          <div class="tech-item">
+            <img src="assets/tech-html.png" alt="HTML5">
+            <span>HTML5</span>
+          </div>
+          <div class="tech-item">
+            <img src="assets/tech-css.png" alt="CSS3">
+            <span>CSS3</span>
+          </div>
+          <div class="tech-item">
+            <img src="assets/tech-js.png" alt="JavaScript">
+            <span>JavaScript</span>
+          </div>
+          <div class="tech-item">
+            <img src="assets/tech-angular.png" alt="Angular">
+            <span>Angular</span>
+          </div>
+          <div class="tech-item">
+            <img src="assets/tech-mysql.png" alt="MySql">
+            <span>MySql</span>
+          </div>
+          <div class="tech-item">
+            <img src="assets/tech-node.png" alt="Node.js">
+            <span>Node.js</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

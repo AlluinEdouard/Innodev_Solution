@@ -1,1 +1,68 @@
-<p>realisations works!</p>
+<div class="realisations-container">
+  <!-- Vidéo de fond -->
+  <div class="video-background">
+    <video #backgroundVideo autoplay muted loop class="background-video" (ended)="restartVideo()">
+      <source [src]="videoSource" type="video/mp4">
+      Votre navigateur ne supporte pas les vidéos HTML5.
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <!-- Contenu principal -->
+  <div class="content-wrapper">
+    <!-- Titre principal -->
+    <div class="header-section">
+      <h1 class="main-title">RÉALISATIONS</h1>
+    </div>
+
+    <!-- Liste des réalisations -->
+    <div class="realisations-list">
+      <div *ngFor="let realisation of realisations; let i = index" 
+           class="realisation-item" 
+           [class.expanded]="realisation.isExpanded"
+           [class.zigzag-right]="i % 2 !== 0">
+        
+        <!-- Vue compacte -->
+        <div class="realisation-compact" [class.hidden]="realisation.isExpanded">
+          <div class="compact-content">
+            <div class="image-button-container">
+              <div class="image-container">
+                <img [src]="realisation.image" [alt]="realisation.title" class="realisation-image-small">
+              </div>
+              <button class="expand-button" (click)="toggleRealisation(realisation.id)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <h3 class="realisation-title-small">{{ realisation.title }}</h3>
+          </div>
+        </div>
+
+        <!-- Vue étendue -->
+        <div class="realisation-expanded" [class.visible]="realisation.isExpanded">
+          <div class="expanded-content">
+            <div class="expanded-image-container" 
+                 [class.phone-format]="realisation.title === 'Planification' || realisation.title === 'Application mobile'">
+              <img [src]="realisation.image" [alt]="realisation.title" class="realisation-image-large">
+              <button class="close-button" (click)="toggleRealisation(realisation.id)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <div class="expanded-text-container">
+              <h3 class="realisation-title-large">{{ realisation.title }}</h3>
+              <div class="realisation-description">
+                <p>{{ realisation.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Séparateur -->
+        <div class="separator" *ngIf="i < realisations.length - 1"></div>
+      </div>
+    </div>
+  </div>
+</div>

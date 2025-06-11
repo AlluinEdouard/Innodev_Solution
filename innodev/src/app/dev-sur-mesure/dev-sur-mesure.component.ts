@@ -31,8 +31,10 @@ export class DevSurMesureComponent implements OnInit, AfterViewInit {
       });
     }
 
-    // Initialiser les animations GSAP après le rendu du DOM
-    this.initAnimations();
+    // Attendre un petit délai pour s'assurer que le DOM est complètement rendu
+    setTimeout(() => {
+      this.initAnimations();
+    }, 100);
   }
 
   // Fonction pour redémarrer la vidéo quand elle se termine
@@ -49,11 +51,17 @@ export class DevSurMesureComponent implements OnInit, AfterViewInit {
     // Animation pour le titre principal
     this.animateMainTitle();
     
-    // Animation pour le contenu principal avec zigzag
-    this.animateZigzagContent();
+    // Animation pour l'introduction
+    this.animateIntroSection();
     
-    // Animation pour les flèches
-    this.animateArrows();
+    // Animation pour les cartes de services
+    this.animateServiceCards();
+    
+    // Animation pour les statistiques
+    this.animateStats();
+    
+    // Animation pour la section processus
+    this.animateProcessSection();
   }
 
   // Animation du titre principal
@@ -81,122 +89,387 @@ export class DevSurMesureComponent implements OnInit, AfterViewInit {
     }
   }
 
-  // Animation du contenu en zigzag
-  private animateZigzagContent(): void {
-    const leftElements = document.querySelectorAll('.content-item.left');
-    const rightElements = document.querySelectorAll('.content-item.right');
-    
-    // Animation des éléments à gauche (viennent de la gauche)
-    leftElements.forEach((element, index) => {
-      gsap.fromTo(element,
-        {
-          x: -150,
-          opacity: 0
-        },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power3.out",
-          delay: index * 0.4,
-          scrollTrigger: {
-            trigger: element,
-            start: "top 85%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
+  // Animation de l'introduction
+  private animateIntroSection(): void {
+    const introTitle = document.querySelector('.intro-title');
+    const introDescription = document.querySelector('.intro-description');
+    const introBadge = document.querySelector('.intro-badge');
 
-      // Animation au survol pour les éléments à gauche
-      this.addHoverAnimation(element);
-    });
-
-    // Animation des éléments à droite (viennent de la droite)
-    rightElements.forEach((element, index) => {
-      gsap.fromTo(element,
-        {
-          x: 150,
-          opacity: 0
-        },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power3.out",
-          delay: index * 0.4,
-          scrollTrigger: {
-            trigger: element,
-            start: "top 85%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-
-      // Animation au survol pour les éléments à droite
-      this.addHoverAnimation(element);
-    });
-  }
-
-  // Animation des flèches
-  private animateArrows(): void {
-    const arrows = document.querySelectorAll('.arrow');
-    
-    arrows.forEach((arrow, index) => {
-      gsap.fromTo(arrow,
+    // Animation du badge
+    if (introBadge) {
+      gsap.fromTo(introBadge,
         {
           scale: 0,
-          opacity: 0
+          opacity: 0,
+          rotation: -180
         },
         {
           scale: 1,
-          opacity: 0.7,
+          opacity: 1,
+          rotation: 0,
           duration: 0.8,
           ease: "back.out(1.7)",
-          delay: index * 0.6 + 0.8,
           scrollTrigger: {
-            trigger: arrow,
-            start: "top 90%",
+            trigger: introBadge,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    }
+
+    // Animation du titre
+    if (introTitle) {
+      gsap.fromTo(introTitle,
+        {
+          y: 50,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+          delay: 0.3,
+          scrollTrigger: {
+            trigger: introTitle,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    }
+
+    // Animation de la description
+    if (introDescription) {
+      gsap.fromTo(introDescription,
+        {
+          y: 30,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+          delay: 0.6,
+          scrollTrigger: {
+            trigger: introDescription,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    }
+  }
+
+  // Animation des cartes de services
+  private animateServiceCards(): void {
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    serviceCards.forEach((card, index) => {
+      // Animation d'entrée
+      gsap.fromTo(card,
+        {
+          y: 80,
+          opacity: 0,
+          scale: 0.9
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          ease: "power3.out",
+          delay: index * 0.2,
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
             toggleActions: "play none none reverse"
           }
         }
       );
 
-      // Animation au survol des flèches
-      arrow.addEventListener('mouseenter', () => {
-        gsap.to(arrow, {
-          scale: 1.1,
+      // Animations au survol
+      this.addServiceCardHoverAnimation(card);
+    });
+  }
+
+  // Animation des statistiques
+  private animateStats(): void {
+    const statItems = document.querySelectorAll('.stat-item');
+    
+    statItems.forEach((stat, index) => {
+      const number = stat.querySelector('.stat-number');
+      const label = stat.querySelector('.stat-label');
+      
+      // Animation du conteneur
+      gsap.fromTo(stat,
+        {
+          y: 50,
+          opacity: 0
+        },
+        {
+          y: 0,
           opacity: 1,
-          duration: 0.3,
-          ease: "power2.out"
-        });
+          duration: 0.8,
+          ease: "power3.out",
+          delay: index * 0.15,
+          scrollTrigger: {
+            trigger: stat,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+
+      // Animation du nombre (compteur)
+      if (number) {
+        const finalValue = parseInt(number.textContent || '0');
+        gsap.fromTo({ value: 0 },
+          { value: finalValue },
+          {
+            duration: 2,
+            ease: "power2.out",
+            delay: index * 0.15 + 0.5,
+            onUpdate: function() {
+              number.textContent = Math.round(this['targets']()[0].value).toString();
+            },
+            scrollTrigger: {
+              trigger: stat,
+              start: "top 85%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      }
+    });
+  }
+
+  // Animation de la section processus
+  private animateProcessSection(): void {
+    const processTitle = document.querySelector('.process-title');
+    const processSteps = document.querySelectorAll('.process-step');
+    
+    // Animation du titre
+    if (processTitle) {
+      gsap.fromTo(processTitle,
+        {
+          y: 50,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: processTitle,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    }
+
+    // Animation des étapes
+    processSteps.forEach((step, index) => {
+      const stepNumber = step.querySelector('.step-number');
+      const stepContent = step.querySelector('.step-content');
+      const stepConnector = step.querySelector('.step-connector');
+      
+      // Animation du numéro
+      if (stepNumber) {
+        gsap.fromTo(stepNumber,
+          {
+            scale: 0,
+            opacity: 0,
+            rotation: -180
+          },
+          {
+            scale: 1,
+            opacity: 1,
+            rotation: 0,
+            duration: 0.8,
+            ease: "back.out(1.7)",
+            delay: index * 0.3,
+            scrollTrigger: {
+              trigger: step,
+              start: "top 85%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      }
+
+      // Animation du contenu
+      if (stepContent) {
+        gsap.fromTo(stepContent,
+          {
+            x: index % 2 === 0 ? -50 : 50,
+            opacity: 0
+          },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+            delay: index * 0.3 + 0.4,
+            scrollTrigger: {
+              trigger: step,
+              start: "top 85%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      }
+
+      // Animation du connecteur
+      if (stepConnector) {
+        gsap.fromTo(stepConnector,
+          {
+            scaleX: 0,
+            opacity: 0
+          },
+          {
+            scaleX: 1,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            delay: index * 0.3 + 0.8,
+            scrollTrigger: {
+              trigger: step,
+              start: "top 85%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      }
+    });
+  }
+
+  // Animations au survol pour les cartes de services
+  private addServiceCardHoverAnimation(card: Element): void {
+    const icon = card.querySelector('.service-icon');
+    const title = card.querySelector('.service-title');
+    const badge = card.querySelector('.service-badge');
+
+    card.addEventListener('mouseenter', () => {
+      // Animation de la carte
+      gsap.to(card, {
+        y: -15,
+        scale: 1.02,
+        duration: 0.4,
+        ease: "power2.out"
       });
 
-      arrow.addEventListener('mouseleave', () => {
-        gsap.to(arrow, {
-          scale: 1,
-          opacity: 0.7,
+      // Animation de l'icône
+      if (icon) {
+        gsap.to(icon, {
+          scale: 1.2,
+          rotation: 10,
+          duration: 0.4,
+          ease: "power2.out"
+        });
+      }
+
+      // Animation du titre
+      if (title) {
+        gsap.to(title, {
+          color: "#4BA4CE",
           duration: 0.3,
           ease: "power2.out"
         });
+      }
+
+      // Animation du badge
+      if (badge) {
+        gsap.to(badge, {
+          scale: 1.1,
+          backgroundColor: "#4BA4CE",
+          color: "white",
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      }
+    });
+
+    card.addEventListener('mouseleave', () => {
+      // Retour à l'état normal
+      gsap.to(card, {
+        y: 0,
+        scale: 1,
+        duration: 0.4,
+        ease: "power2.out"
+      });
+
+      if (icon) {
+        gsap.to(icon, {
+          scale: 1,
+          rotation: 0,
+          duration: 0.4,
+          ease: "power2.out"
+        });
+      }
+
+      if (title) {
+        gsap.to(title, {
+          color: "#25384A",
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      }
+
+      if (badge) {
+        gsap.to(badge, {
+          scale: 1,
+          backgroundColor: "rgba(75, 164, 206, 0.1)",
+          color: "#4BA4CE",
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      }
+    });
+  }
+
+  // Animation de parallaxe pour les éléments flottants
+  private initParallaxElements(): void {
+    const floatingElements = document.querySelectorAll('.floating-element');
+    
+    floatingElements.forEach((element, index) => {
+      gsap.to(element, {
+        y: "random(-20, 20)",
+        rotation: "random(-5, 5)",
+        duration: "random(3, 5)",
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+        delay: index * 0.5
       });
     });
   }
 
-  // Fonction pour ajouter l'animation au survol
-  private addHoverAnimation(element: Element): void {
-    element.addEventListener('mouseenter', () => {
-      gsap.to(element, {
-        scale: 1.02,
-        duration: 0.3,
-        ease: "power2.out"
+  // Animation continue pour les éléments de décoration
+  private initContinuousAnimations(): void {
+    // Animation des particules flottantes
+    const particles = document.querySelectorAll('.particle');
+    
+    particles.forEach((particle, index) => {
+      gsap.set(particle, { 
+        x: "random(-100, 100)", 
+        y: "random(-100, 100)",
+        opacity: "random(0.3, 0.8)"
       });
-    });
-
-    element.addEventListener('mouseleave', () => {
-      gsap.to(element, {
-        scale: 1,
-        duration: 0.3,
-        ease: "power2.out"
+      
+      gsap.to(particle, {
+        x: "+=random(-50, 50)",
+        y: "+=random(-50, 50)",
+        rotation: "+=random(-180, 180)",
+        duration: "random(8, 15)",
+        ease: "none",
+        repeat: -1,
+        yoyo: true,
+        delay: index * 0.5
       });
     });
   }

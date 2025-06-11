@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=PT+Sans&display=swap');
+
+.realisations-container {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+// Vidéo de fond
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+  object-fit: cover;
+  opacity: 0.2;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(37, 56, 74, 0.85);
+  background-color: #25384A;
+  z-index: -1;
+}
+
+// Contenu principal
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  padding: 2rem 1rem;
+  
+  @media (min-width: 768px) {
+    padding: 3rem 2rem;
+  }
+  
+  @media (min-width: 1024px) {
+    padding: 4rem 3rem;
+  }
+  
+  @media (min-width: 1200px) {
+    padding: 5rem 4rem;
+  }
+}
+
+// Section header
+.header-section {
+  text-align: center;
+  margin-bottom: 4rem;
+  
+  @media (min-width: 768px) {
+    margin-bottom: 6rem;
+  }
+}
+
+.main-title {
+  font-family: 'League Spartan', sans-serif;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  
+  @media (min-width: 576px) {
+    font-size: 3rem;
+  }
+  
+  @media (min-width: 768px) {
+    font-size: 3.5rem;
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 4rem;
+  }
+}
+
+// Liste des réalisations
+.realisations-list {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.realisation-item {
+  margin-bottom: 3rem;
+  
+  @media (min-width: 768px) {
+    margin-bottom: 4rem;
+  }
+  
+  @media (min-width: 1024px) {
+    margin-bottom: 5rem;
+  }
+  
+  // Disposition en zigzag
+  &.zigzag-right {
+    .realisation-compact {
+      @media (min-width: 768px) {
+        .compact-content {
+          flex-direction: row-reverse;
+          text-align: right;
+          
+          .image-button-container {
+            flex-direction: row-reverse;
+          }
+        }
+      }
+    }
+    
+    .realisation-expanded {
+      @media (min-width: 768px) {
+        .expanded-content {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+  }
+}
+
+// Vue compacte
+.realisation-compact {
+  transition: all 0.5s ease;
+  
+  &.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+  }
+}
+
+.compact-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  
+  @media (max-width: 767px) {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    gap: 1.5rem;
+  }
+}
+
+.image-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.realisation-image-small {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  
+  @media (min-width: 576px) {
+    width: 150px;
+    height: 100px;
+  }
+  
+  @media (min-width: 768px) {
+    width: 180px;
+    height: 120px;
+  }
+}
+
+.expand-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4BA4CE;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  
+  @media (min-width: 768px) {
+    width: 45px;
+    height: 45px;
+  }
+  
+  &:hover {
+    background-color: lighten(#4BA4CE, 10%);
+    transform: scale(1.1);
+  }
+  
+  svg {
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover svg {
+    transform: translateX(2px);
+  }
+}
+
+.image-button-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+
+  @media (max-width: 767px) {
+    justify-content: center;
+  }
+}
+
+.realisation-title-small {
+  font-family: 'League Spartan', sans-serif;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  
+  @media (min-width: 576px) {
+    font-size: 1.4rem;
+  }
+  
+  @media (min-width: 768px) {
+    font-size: 1.6rem;
+  }
+}
+
+// Vue étendue
+.realisation-expanded {
+  display: none;
+  
+  &.visible {
+    display: block;
+    animation: expandIn 0.6s ease forwards;
+  }
+}
+
+@keyframes expandIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.expanded-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    gap: 3rem;
+  }
+  
+  @media (min-width: 1024px) {
+    gap: 4rem;
+  }
+}
+
+.expanded-image-container {
+  position: relative;
+  flex: 1;
+  max-width: 500px;
+  
+  // Styles spécifiques pour les images au format téléphone (Planification et Application mobile)
+  &.phone-format {
+    max-width: 300px;
+    
+    @media (min-width: 768px) {
+      max-width: 250px;
+    }
+    
+    @media (min-width: 1024px) {
+      max-width: 280px;
+    }
+  }
+}
+
+.realisation-image-large {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  
+  @media (min-width: 768px) {
+    min-height: 300px;
+    object-fit: cover;
+  }
+  
+  // Ajustement pour les images au format téléphone
+  .phone-format & {
+    @media (min-width: 768px) {
+      min-height: 400px;
+      max-height: 500px;
+    }
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: rgba(75, 164, 206, 0.9);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: #4BA4CE;
+    transform: scale(1.1);
+  }
+}
+
+.expanded-text-container {
+  flex: 1;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  
+  @media (min-width: 768px) {
+    padding: 2.5rem;
+  }
+  
+  @media (min-width: 1024px) {
+    padding: 3rem;
+  }
+}
+
+.realisation-title-large {
+  font-family: 'League Spartan', sans-serif;
+  color: #4BA4CE;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  
+  @media (min-width: 576px) {
+    font-size: 1.8rem;
+  }
+  
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.realisation-description {
+  p {
+    font-family: 'PT Sans', sans-serif;
+    color: #4BA4CE;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+    
+    @media (min-width: 576px) {
+      font-size: 1.1rem;
+    }
+    
+    @media (min-width: 768px) {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// Séparateur
+.separator {
+  height: 2px;
+  width: 60px;
+  background-color: #4BA4CE;
+  margin: 2rem auto;
+  border-radius: 1px;
+  
+  @media (min-width: 768px) {
+    width: 80px;
+    margin: 3rem auto;
+  }
+  
+  @media (min-width: 1024px) {
+    width: 100px;
+    margin: 4rem auto;
+  }
+}

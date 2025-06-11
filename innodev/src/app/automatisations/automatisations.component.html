@@ -1,0 +1,239 @@
+<div class="automatisations-container">
+  <!-- Section vidéo avec titre -->
+  <div class="video-section">
+    <div class="video-overlay"></div>
+    <video #backgroundVideo autoplay muted loop class="background-video" (ended)="restartVideo()">
+      <source src="assets/background-video-dev.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas les vidéos HTML5.
+    </video>
+    
+    <div class="title-overlay">
+      <h1 class="main-title">AUTOMATISATIONS</h1>
+    </div>
+  </div>
+
+  <!-- Section contenu principal -->
+  <div class="content-section">
+    <div class="content-container">
+      
+      <!-- Introduction - Label blanc -->
+      <div class="content-label white-label intro-label">
+        <div class="intro-content">
+          <div class="intro-icon">
+            <img src="assets/automation-gear-icon.png" alt="Automatisation">
+          </div>
+          <div class="intro-text-container">
+            <h2 class="intro-title">Automatisation Intelligente</h2>
+            <p class="intro-text">
+              Nous vous aidons à automatiser vos processus pour gagner en efficacité et réduire les tâches répétitives. 
+              Grâce à des solutions sur mesure, nous optimisons vos workflows pour vous permettre de vous concentrer 
+              sur l'essentiel et d'accroître votre productivité.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Analyse des processus - Label bleu -->
+      <div class="content-label blue-label analysis-label">
+        <h2 class="blue-title">ANALYSE ET IDENTIFICATION DES PROCESSUS</h2>
+        <div class="title-underline"></div>
+        
+        <div class="icon-container">
+          <img src="assets/process-analysis-icon.png" alt="Analyse des processus">
+        </div>
+        
+        <div class="analysis-content">
+          <p class="blue-description">
+            Nous commençons par une analyse approfondie de vos processus actuels pour identifier les tâches répétitives, 
+            les goulots d'étranglement et les opportunités d'automatisation qui généreront le plus de valeur ajoutée.
+          </p>
+          
+          <div class="analysis-features">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <img src="assets/workflow-mapping-icon.png" alt="Cartographie">
+              </div>
+              <div class="feature-content">
+                <h4>Cartographie des Workflows</h4>
+                <p>Mapping détaillé de vos processus métier pour identifier chaque étape automatisable</p>
+              </div>
+            </div>
+            
+            <div class="feature-item">
+              <div class="feature-icon">
+                <img src="assets/bottleneck-icon.png" alt="Goulots d'étranglement">
+              </div>
+              <div class="feature-content">
+                <h4>Détection des Ralentissements</h4>
+                <p>Identification des points de friction qui ralentissent vos équipes et impactent la productivité</p>
+              </div>
+            </div>
+            
+            <div class="feature-item">
+              <div class="feature-icon">
+                <img src="assets/opportunity-icon.png" alt="Opportunités">
+              </div>
+              <div class="feature-content">
+                <h4>Priorisation des Opportunités</h4>
+                <p>Évaluation du potentiel de gain pour chaque processus identifié selon l'impact et la faisabilité</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solutions d'automatisation - Label blanc -->
+      <div class="content-label white-label development-label">
+        <div class="development-content">
+          <h3 class="development-title">Solutions d'Automatisation Sur Mesure</h3>
+          <p class="development-description">
+            Nous développons des solutions d'automatisation parfaitement adaptées à votre contexte métier. 
+            Chaque automation est conçue pour s'intégrer harmonieusement dans votre écosystème existant 
+            tout en apportant une valeur immédiate et mesurable.
+          </p>
+          
+          <div class="development-grid">
+            <div class="development-card">
+              <div class="development-icon">
+                <img src="assets/robot-process-icon.png" alt="RPA">
+              </div>
+              <h4 class="development-card-title">Automatisation RPA</h4>
+              <p class="development-text">
+                Robots logiciels qui reproduisent les actions humaines pour automatiser les tâches administratives et répétitives.
+              </p>
+            </div>
+            
+            <div class="development-card">
+              <div class="development-icon">
+                <img src="assets/api-integration-icon.png" alt="Intégration API">
+              </div>
+              <h4 class="development-card-title">Intégration API</h4>
+              <p class="development-text">
+                Connexion automatisée entre vos différents outils pour fluidifier les échanges de données.
+              </p>
+            </div>
+            
+            <div class="development-card">
+              <div class="development-icon">
+                <img src="assets/smart-trigger-icon.png" alt="Déclencheurs intelligents">
+              </div>
+              <h4 class="development-card-title">Déclencheurs Intelligents</h4>
+              <p class="development-text">
+                Systèmes d'alerte et d'action automatique basés sur des conditions prédéfinies et des seuils.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gain de productivité - Label bleu -->
+      <div class="content-label blue-label productivity-label">
+        <h2 class="blue-title">MAXIMISATION DE LA PRODUCTIVITÉ</h2>
+        <div class="title-underline"></div>
+        
+        <div class="productivity-content">
+          <div class="productivity-intro">
+            <p class="blue-description">
+              L'automatisation libère vos équipes des tâches chronophages et répétitives, leur permettant 
+              de se concentrer sur des activités à plus forte valeur ajoutée et d'optimiser leur impact sur votre business.
+            </p>
+          </div>
+          
+          <div class="productivity-strategies">
+            <div class="strategy-row">
+              <div class="strategy-visual">
+                <img src="assets/time-saving-icon.png" alt="Gain de temps">
+              </div>
+              <div class="strategy-content">
+                <h4>Réduction du Temps de Traitement</h4>
+                <p>Diminution drastique des délais d'exécution grâce à des processus automatisés disponibles 24h/24.</p>
+              </div>
+            </div>
+            
+            <div class="strategy-row">
+              <div class="strategy-visual">
+                <img src="assets/error-reduction-icon.png" alt="Réduction erreurs">
+              </div>
+              <div class="strategy-content">
+                <h4>Élimination des Erreurs Humaines</h4>
+                <p>Standardisation des processus pour garantir une qualité constante et réduire les risques d'erreur.</p>
+              </div>
+            </div>
+            
+            <div class="strategy-row">
+              <div class="strategy-visual">
+                <img src="assets/focus-icon.png" alt="Concentration">
+              </div>
+              <div class="strategy-content">
+                <h4>Recentrage sur l'Essentiel</h4>
+                <p>Libération du temps collaborateur pour les tâches stratégiques, créatives et relationnelles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accompagnement et suivi - Label blanc -->
+      <div class="content-label white-label evolution-label">
+        <div class="evolution-content">
+          <h3 class="evolution-title">Accompagnement et Optimisation Continue</h3>
+          <p class="evolution-description">
+            Nous ne nous contentons pas de mettre en place vos automatisations. Nous vous accompagnons dans leur adoption, 
+            mesurons leur impact et les optimisons en continu pour garantir un retour sur investissement maximal.
+          </p>
+          
+          <div class="evolution-grid">
+            <div class="evolution-card">
+              <div class="evolution-icon">🎓</div>
+              <div class="evolution-info">
+                <h4>Formation des Équipes</h4>
+                <p>Accompagnement personnalisé pour maîtriser les nouveaux processus automatisés</p>
+              </div>
+            </div>
+            
+            <div class="evolution-card">
+              <div class="evolution-icon">📊</div>
+              <div class="evolution-info">
+                <h4>Monitoring des Performances</h4>
+                <p>Tableaux de bord en temps réel pour suivre l'efficacité de vos automatisations</p>
+              </div>
+            </div>
+            
+            <div class="evolution-card">
+              <div class="evolution-icon">🔧</div>
+              <div class="evolution-info">
+                <h4>Maintenance Préventive</h4>
+                <p>Surveillance continue et ajustements proactifs pour maintenir les performances optimales</p>
+              </div>
+            </div>
+            
+            <div class="evolution-card">
+              <div class="evolution-icon">📈</div>
+              <div class="evolution-info">
+                <h4>Amélioration Continue</h4>
+                <p>Évolution des automatisations basée sur les retours d'usage et les nouveaux besoins</p>
+              </div>
+            </div>
+            
+            <div class="evolution-card">
+              <div class="evolution-icon">🎯</div>
+              <div class="evolution-info">
+                <h4>ROI Mesurable</h4>
+                <p>Calcul précis des gains de temps et de productivité générés par l'automatisation</p>
+              </div>
+            </div>
+            
+            <div class="evolution-card">
+              <div class="evolution-icon">🚀</div>
+              <div class="evolution-info">
+                <h4>Montée en Puissance</h4>
+                <p>Extension progressive de l'automatisation à d'autres processus pour maximiser l'impact</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
