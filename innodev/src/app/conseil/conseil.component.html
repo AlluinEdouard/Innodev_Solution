@@ -1,1 +1,287 @@
-<p>conseil works!</p>
+<div class="conseils-container">
+  <!-- Section vidéo avec titre -->
+  <div class="video-section">
+    <div class="video-overlay"></div>
+    <video #backgroundVideo autoplay muted loop class="background-video" (ended)="restartVideo()">
+      <source src="assets/background-video-dev.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas les vidéos HTML5.
+    </video>
+    
+    <div class="title-overlay">
+      <h1 class="main-title">CONSEILS</h1>
+    </div>
+  </div>
+
+  <!-- Section contenu principal -->
+  <div class="content-section">
+    <div class="content-container">
+      
+      <!-- Introduction - Label blanc -->
+      <div class="content-label white-label intro-label">
+        <div class="intro-content">
+          <div class="intro-icon">
+            <img src="assets/conseil-icon.png" alt="Services de conseil">
+          </div>
+          <div class="intro-text-container">
+            <h2 class="intro-title">Accompagnement Conseil Dédié</h2>
+            <p class="intro-text">
+              Nous vous accompagnons avec un service de conseil dédié, pour identifier et mettre en œuvre 
+              les solutions digitales les mieux adaptées à vos défis. Notre expertise vous guide à chaque étape, 
+              de la stratégie à l'optimisation, pour garantir des résultats concrets et durables.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Analyse et diagnostic - Label bleu -->
+      <div class="content-label blue-label analyse-label">
+        <h2 class="blue-title">ANALYSE & DIAGNOSTIC DIGITAL</h2>
+        <div class="title-underline"></div>
+        
+        <div class="icon-container">
+          <img src="assets/diagnostic-icon.png" alt="Analyse et diagnostic">
+        </div>
+        
+        <div class="analyse-content">
+          <p class="blue-description">
+            Avant toute transformation digitale, nous réalisons un audit complet de votre écosystème numérique 
+            pour identifier les opportunités d'amélioration et définir une roadmap sur mesure.
+          </p>
+          
+          <div class="analyse-features">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <img src="assets/audit-icon.png" alt="Audit">
+              </div>
+              <div class="feature-content">
+                <h4>Audit Technologique</h4>
+                <p>Évaluation complète de votre infrastructure et outils digitaux existants</p>
+              </div>
+            </div>
+            
+            <div class="feature-item">
+              <div class="feature-icon">
+                <img src="assets/processus-icon.png" alt="Processus">
+              </div>
+              <div class="feature-content">
+                <h4>Analyse des Processus</h4>
+                <p>Cartographie détaillée de vos workflows pour identifier les axes d'optimisation</p>
+              </div>
+            </div>
+            
+            <div class="feature-item">
+              <div class="feature-icon">
+                <img src="assets/audit-icon.png" alt="Benchmark">
+              </div>
+              <div class="feature-content">
+                <h4>Benchmark Concurrentiel</h4>
+                <p>Analyse comparative de votre positionnement digital face à la concurrence</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stratégie personnalisée - Label blanc -->
+      <div class="content-label white-label strategie-label">
+        <div class="strategie-content">
+          <h3 class="strategie-title">Stratégie Digitale Personnalisée</h3>
+          <p class="strategie-description">
+            Chaque entreprise est unique. Nous élaborons une stratégie digitale sur mesure qui s'aligne 
+            parfaitement avec vos objectifs business et votre culture d'entreprise.
+          </p>
+          
+          <div class="strategie-grid">
+            <div class="strategie-card">
+              <div class="strategie-icon">
+                <img src="assets/roadmap-icon.png" alt="Roadmap">
+              </div>
+              <h4 class="strategie-card-title">Roadmap Détaillée</h4>
+              <p class="strategie-text">
+                Plan d'action structuré avec étapes clés, jalons et indicateurs de performance pour un déploiement maîtrisé.
+              </p>
+            </div>
+            
+            <div class="strategie-card">
+              <div class="strategie-icon">
+                <img src="assets/budget-icon.png" alt="Budget">
+              </div>
+              <h4 class="strategie-card-title">Optimisation Budgétaire</h4>
+              <p class="strategie-text">
+                Allocation intelligente des ressources pour maximiser le ROI de vos investissements digitaux.
+              </p>
+            </div>
+            
+            <div class="strategie-card">
+              <div class="strategie-icon">
+                <img src="assets/risque-icon.png" alt="Gestion des risques">
+              </div>
+              <h4 class="strategie-card-title">Gestion des Risques</h4>
+              <p class="strategie-text">
+                Identification et mitigation proactive des risques pour sécuriser votre transformation digitale.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mise en œuvre guidée - Label bleu -->
+      <div class="content-label blue-label mise-oeuvre-label">
+        <h2 class="blue-title">MISE EN ŒUVRE GUIDÉE</h2>
+        <div class="title-underline"></div>
+        
+        <div class="mise-oeuvre-content">
+          <div class="mise-oeuvre-intro">
+            <p class="blue-description">
+              Notre accompagnement ne s'arrête pas à la stratégie. Nous vous guidons concrètement dans 
+              l'implémentation de vos solutions digitales pour garantir leur succès et leur adoption.
+            </p>
+          </div>
+          
+          <div class="mise-oeuvre-steps">
+            <div class="step-row">
+              <div class="step-visual">
+                <div class="step-number">1</div>
+              </div>
+              <div class="step-content">
+                <h4>Planification Opérationnelle</h4>
+                <p>Définition des équipes, ressources et timeline pour un déploiement optimal de vos projets digitaux.</p>
+              </div>
+            </div>
+            
+            <div class="step-row">
+              <div class="step-visual">
+                <div class="step-number">2</div>
+              </div>
+              <div class="step-content">
+                <h4>Accompagnement Technique</h4>
+                <p>Support technique continu et expertise spécialisée pour surmonter les défis d'implémentation.</p>
+              </div>
+            </div>
+            
+            <div class="step-row">
+              <div class="step-visual">
+                <div class="step-number">3</div>
+              </div>
+              <div class="step-content">
+                <h4>Formation des Équipes</h4>
+                <p>Formation complète de vos collaborateurs pour garantir l'adoption et la maîtrise des nouvelles solutions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Suivi et optimisation - Label blanc -->
+      <div class="content-label white-label suivi-label">
+        <div class="suivi-content">
+          <h3 class="suivi-title">Suivi Continu & Optimisation</h3>
+          <p class="suivi-description">
+            La transformation digitale est un processus continu. Nous assurons un suivi régulier 
+            et des optimisations constantes pour maintenir votre avantage concurrentiel.
+          </p>
+          
+          <div class="suivi-grid">
+            <div class="suivi-card">
+              <div class="suivi-icon">📊</div>
+              <div class="suivi-info">
+                <h4>Monitoring Performance</h4>
+                <p>Suivi en temps réel des KPIs et métriques clés pour mesurer l'impact de vos actions digitales</p>
+              </div>
+            </div>
+            
+            <div class="suivi-card">
+              <div class="suivi-icon">🔧</div>
+              <div class="suivi-info">
+                <h4>Optimisations Continues</h4>
+                <p>Ajustements réguliers basés sur les données pour améliorer constamment vos performances
+                </p>
+              </div>
+            </div>
+            
+            <div class="suivi-card">
+              <div class="suivi-icon">📈</div>
+              <div class="suivi-info">
+                <h4>Évolution Stratégique</h4>
+                <p>Adaptation de votre stratégie digitale aux évolutions du marché et aux nouvelles opportunités</p>
+              </div>
+            </div>
+            
+            <div class="suivi-card">
+              <div class="suivi-icon">🎯</div>
+              <div class="suivi-info">
+                <h4>Résultats Mesurables</h4>
+                <p>Reporting détaillé avec ROI calculé et recommandations pour maximiser vos investissements</p>
+              </div>
+            </div>
+            
+            <div class="suivi-card">
+              <div class="suivi-icon">🚀</div>
+              <div class="suivi-info">
+                <h4>Innovation Continue</h4>
+                <p>Veille technologique et intégration des dernières innovations pour maintenir votre avance</p>
+              </div>
+            </div>
+            
+            <div class="suivi-card">
+              <div class="suivi-icon">👥</div>
+              <div class="suivi-info">
+                <h4>Support Dédié</h4>
+                <p>Équipe dédiée disponible pour répondre à vos questions et vous accompagner au quotidien</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Expertise métier - Label bleu -->
+      <div class="content-label blue-label expertise-label">
+        <h2 class="blue-title">EXPERTISE MÉTIER RECONNUE</h2>
+        <div class="title-underline"></div>
+        
+        <div class="expertise-content">
+          <div class="expertise-intro">
+            <p class="blue-description">
+              Notre équipe d'experts combine une solide expérience technique avec une connaissance approfondie 
+              des enjeux business pour vous apporter des conseils pertinents et actionnables.
+            </p>
+          </div>
+          
+          <div class="expertise-domains">
+            <div class="domain-card">
+              <div class="domain-header">
+                💻
+                <h4>Transformation Digitale</h4>
+              </div>
+              <p>Accompagnement global dans votre mutation numérique avec une approche pragmatique et orientée résultats.</p>
+            </div>
+            
+            <div class="domain-card">
+              <div class="domain-header">
+                📊
+                <h4>Data & Analytics</h4>
+              </div>
+              <p>Valorisation de vos données pour des prises de décision éclairées et une optimisation continue.</p>
+            </div>
+            
+            <div class="domain-card">
+              <div class="domain-header">
+                ⏱️
+                <h4>Cloud & Infrastructure</h4>
+              </div>
+              <p>Migration et optimisation cloud pour une infrastructure moderne, scalable et sécurisée.</p>
+            </div>
+            
+            <div class="domain-card">
+              <div class="domain-header">
+                🔐
+                <h4>Cybersécurité</h4>
+              </div>
+              <p>Protection de vos actifs numériques avec des stratégies de sécurité adaptées à vos enjeux.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
