@@ -91,265 +91,258 @@
   }
 }
 
-// Liste des réalisations
-.realisations-list {
+// Layout principal centré
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 1400px;
   margin: 0 auto;
+  gap: 3rem;
 }
 
-.realisation-item {
-  margin-bottom: 3rem;
+// Carousel horizontal
+.carousel-wheel-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.carousel-wheel {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
   @media (min-width: 768px) {
-    margin-bottom: 4rem;
+    height: 220px;
   }
   
   @media (min-width: 1024px) {
-    margin-bottom: 5rem;
-  }
-  
-  // Disposition en zigzag
-  &.zigzag-right {
-    .realisation-compact {
-      @media (min-width: 768px) {
-        .compact-content {
-          flex-direction: row-reverse;
-          text-align: right;
-          
-          .image-button-container {
-            flex-direction: row-reverse;
-          }
-        }
-      }
-    }
-    
-    .realisation-expanded {
-      @media (min-width: 768px) {
-        .expanded-content {
-          flex-direction: row-reverse;
-        }
-      }
-    }
+    height: 240px;
   }
 }
 
-// Vue compacte
-.realisation-compact {
-  transition: all 0.5s ease;
-  
-  &.hidden {
-    opacity: 0;
-    transform: scale(0.8);
-    pointer-events: none;
-  }
-}
-
-.compact-content {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  
-  @media (max-width: 767px) {
-    flex-direction: column;
-    text-align: center;
-    gap: 1.5rem;
-  }
-  
-  @media (min-width: 768px) {
-    gap: 1.5rem;
-  }
-}
-
-.image-container {
+.wheel-track {
   position: relative;
-  flex-shrink: 0;
-}
-
-.realisation-image-small {
-  width: 120px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  
-  @media (min-width: 576px) {
-    width: 150px;
-    height: 100px;
-  }
-  
-  @media (min-width: 768px) {
-    width: 180px;
-    height: 120px;
-  }
-}
-
-.expand-button {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #4BA4CE;
-  border: none;
-  cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  flex-shrink: 0;
-  
-  @media (min-width: 768px) {
-    width: 45px;
-    height: 45px;
-  }
-  
-  &:hover {
-    background-color: lighten(#4BA4CE, 10%);
-    transform: scale(1.1);
-  }
-  
-  svg {
-    transition: transform 0.3s ease;
-  }
-  
-  &:hover svg {
-    transform: translateX(2px);
-  }
-}
-
-.image-button-container {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-shrink: 0;
-
-  @media (max-width: 767px) {
-    justify-content: center;
-  }
-}
-
-.realisation-title-small {
-  font-family: 'League Spartan', sans-serif;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin: 0;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-  
-  @media (min-width: 576px) {
-    font-size: 1.4rem;
-  }
-  
-  @media (min-width: 768px) {
-    font-size: 1.6rem;
-  }
-}
-
-// Vue étendue
-.realisation-expanded {
-  display: none;
-  
-  &.visible {
-    display: block;
-    animation: expandIn 0.6s ease forwards;
-  }
-}
-
-@keyframes expandIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.expanded-content {
-  display: flex;
   gap: 2rem;
-  align-items: flex-start;
-  
-  @media (max-width: 767px) {
-    flex-direction: column;
-    gap: 2rem;
-  }
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   
   @media (min-width: 768px) {
+    gap: 2.5rem;
+  }
+  
+  @media (min-width: 1024px) {
     gap: 3rem;
   }
-  
-  @media (min-width: 1024px) {
-    gap: 4rem;
-  }
 }
 
-.expanded-image-container {
-  position: relative;
-  flex: 1;
-  max-width: 500px;
+.wheel-item {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 120px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  opacity: 0.6;
+  transform: scale(0.85);
   
-  // Styles spécifiques pour les images au format téléphone (Planification et Application mobile)
-  &.phone-format {
-    max-width: 300px;
+  @media (min-width: 768px) {
+    width: 220px;
+    height: 130px;
+  }
+  
+  @media (min-width: 1024px) {
+    width: 250px;
+    height: 150px;
+  }
+  
+  // Image mise en avant
+  &.active {
+    opacity: 1;
+    transform: scale(1.1);
+    z-index: 10;
+    box-shadow: 0 8px 25px rgba(75, 164, 206, 0.4);
+    border: 2px solid #4BA4CE;
     
     @media (min-width: 768px) {
-      max-width: 250px;
+      transform: scale(1.15);
     }
     
     @media (min-width: 1024px) {
-      max-width: 280px;
+      transform: scale(1.2);
     }
+  }
+  
+  // Images adjacentes
+  &.adjacent {
+    opacity: 0.8;
+    transform: scale(0.95);
   }
 }
 
-.realisation-image-large {
+.wheel-item-image {
   width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.wheel-item-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 1rem 0.8rem 0.8rem;
+  color: white;
   
   @media (min-width: 768px) {
-    min-height: 300px;
-    object-fit: cover;
-  }
-  
-  // Ajustement pour les images au format téléphone
-  .phone-format & {
-    @media (min-width: 768px) {
-      min-height: 400px;
-      max-height: 500px;
-    }
+    padding: 1.2rem 1rem 1rem;
   }
 }
 
-.close-button {
+.wheel-item-title {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  
+  @media (min-width: 768px) {
+    font-size: 1rem;
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 1.1rem;
+  }
+}
+
+// Flèches de navigation horizontales
+.navigation-arrows {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background-color: rgba(75, 164, 206, 0.9);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  pointer-events: none;
+  z-index: 25;
+  
+  @media (min-width: 768px) {
+    padding: 0 2rem;
+  }
+  
+  @media (min-width: 1024px) {
+    padding: 0 3rem;
+  }
+}
+
+.nav-arrow {
+  background: linear-gradient(135deg, #4BA4CE, #5BB5D8);
+  color: white;
   border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
   cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(75, 164, 206, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  pointer-events: auto;
   
-  &:hover {
-    background-color: #4BA4CE;
+  @media (min-width: 768px) {
+    width: 50px;
+    height: 50px;
+  }
+  
+  @media (min-width: 1024px) {
+    width: 55px;
+    height: 55px;
+  }
+  
+  &:hover:not(:disabled) {
     transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(75, 164, 206, 0.4);
+    background: linear-gradient(135deg, #5BB5D8, #6BC5E8);
+  }
+  
+  &:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  svg {
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+    
+    @media (min-width: 768px) {
+      width: 20px;
+      height: 20px;
+    }
+    
+    @media (min-width: 1024px) {
+      width: 22px;
+      height: 22px;
+    }
   }
 }
 
-.expanded-text-container {
-  flex: 1;
-  background-color: white;
-  padding: 2rem;
+// Zone de détails sous le carousel
+.details-container {
+  width: 100%;
+  max-width: 800px;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-placeholder {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1.1rem;
+  
+  @media (min-width: 768px) {
+    font-size: 1.2rem;
+  }
+}
+
+// Détails de la réalisation active
+.realisation-details {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+  
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
   
   @media (min-width: 768px) {
     padding: 2.5rem;
@@ -362,53 +355,70 @@
 
 .realisation-title-large {
   font-family: 'League Spartan', sans-serif;
-  color: #4BA4CE;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
+  color: #25384A;
   margin: 0 0 1.5rem 0;
-  
-  @media (min-width: 576px) {
-    font-size: 1.8rem;
-  }
   
   @media (min-width: 768px) {
     font-size: 2rem;
   }
+  
+  @media (min-width: 1024px) {
+    font-size: 2.2rem;
+  }
 }
 
 .realisation-description {
+  font-family: 'PT Sans', sans-serif;
+  
   p {
-    font-family: 'PT Sans', sans-serif;
-    color: #4BA4CE;
-    font-size: 1rem;
-    line-height: 1.7;
+    color: #666;
+    line-height: 1.6;
     margin: 0;
+    font-size: 1rem;
+    text-align: left;
     
-    @media (min-width: 576px) {
+    @media (min-width: 768px) {
       font-size: 1.1rem;
     }
     
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       font-size: 1.2rem;
     }
   }
 }
 
-// Séparateur
-.separator {
-  height: 2px;
-  width: 60px;
-  background-color: #4BA4CE;
-  margin: 2rem auto;
-  border-radius: 1px;
-  
-  @media (min-width: 768px) {
-    width: 80px;
-    margin: 3rem auto;
+// Responsive pour mobile
+@media (max-width: 767px) {
+  .carousel-wheel {
+    height: 150px;
   }
   
-  @media (min-width: 1024px) {
-    width: 100px;
-    margin: 4rem auto;
+  .wheel-item {
+    width: 160px;
+    height: 100px;
+  }
+  
+  .wheel-track {
+    gap: 1.5rem;
+  }
+  
+  .navigation-arrows {
+    padding: 0 0.5rem;
+  }
+  
+  .nav-arrow {
+    width: 40px;
+    height: 40px;
+    
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  
+  .realisation-details {
+    padding: 1.5rem;
   }
 }
